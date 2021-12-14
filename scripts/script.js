@@ -1,9 +1,10 @@
 //╔════════════════════════════════════════════════╗
 //║             MAIN JAVASCRIPT SCRIPT             ║
 //╚════════════════════════════════════════════════╝
-// Importar el archivo de datos 
+// Importar el archivo de datos
+//
 // Functions import
-import { fnSetValueInput, fnUpdateCartCounter } from "../scripts/general.js";
+//
 // *** Constant definition ***
 //
 // *** Variables definition ***
