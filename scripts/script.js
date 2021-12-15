@@ -56,6 +56,22 @@ for (const key in distancia) {
       console.log('No se encontró')
    }
 }
+console.log('forEach')
+nombrePlanetas.forEach((value, index, array) => {
+   console.log(index + " --- " + value)
+})
+console.log('map: con salida directa a la consola')
+nombrePlanetas.map((planetas, index) => {
+   return(
+   console.log(`El planeta ${planetas} tiene ${tamagno[index]}`)
+   )
+})
+console.log('map: con salida primero a otro arreglo')
+let resultadoMap= nombrePlanetas.map((planetas, index) => {
+   return(`El planeta ${planetas} tiene ${tamagno[index]}`)
+})
+console.log(resultadoMap)
+
 
 
 //
