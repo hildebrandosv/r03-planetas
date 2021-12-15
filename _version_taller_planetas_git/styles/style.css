@@ -1,0 +1,22 @@
+/*╔════════════════════════════════════════════════╗
+  ║ MAIN STYLES CSS sheet                          ║
+  ╚════════════════════════════════════════════════╝*/
+/* Font import and root and body css */
+
+/* Variables definition */
+* {
+   --colorBgNavBarr: #f9da68;
+   --colorMainTitle: green;
+   --colorMainFooter: green;
+   --colorBgError: lightgray;
+   --colorTxtError: red;
+   --colorBgSuccess: #BFFF5F;
+   --colorTxtSuccess: green;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   /* border: none; */
+}
+body{ 
+   font-family: sans-serif; 
+}

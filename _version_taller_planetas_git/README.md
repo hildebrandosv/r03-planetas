@@ -1,0 +1,1 @@
+# En esta carpeta está el seguimiento y practica de GIT con el taller que hay en el archivo PDF
