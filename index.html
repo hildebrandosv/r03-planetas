@@ -5,7 +5,7 @@
   <meta name="author" content="Hildebrando Sierra V.">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planetas</title>
+  <title>Tribute Page</title>
   <!--╔══════════════════════════════════════════════════════════════╗-->
   <!--║ LINKS to STYLES and to external and own libraries            ║-->
   <!--╚══════════════════════════════════════════════════════════════╝-->
@@ -22,56 +22,43 @@
 <body>
   <header class="">
     <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5 ps-5 clFontTitles1" href="#">Sistema Solar</a>
+        <img src="./images/solar-system02.png" width="50px" class="me-4 rounded-circle">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex ms-auto">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
   </header>
-
-  <h1>Ejercicio de arreglo de vectores</h1>
-  <h1>Sistema solar</h1>
-  <table>
-    <thead>
-      <tr>
-        <th># de planeta</th>
-        <th>Planeta</th>
-        <th>Distancia (año luz)</th>
-        <th>Tamaño</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><input type="number" id="n_planeta1" class="numeracion_planetas planeta1"></td>
-        <td><input type="text" id="np_planeta1" class="nombre_planetas planeta1"></td>
-        <td><input type="number" id="d_planeta1" class="distancia_planetas planeta1"></td>
-        <td><input type="number" id="t_planeta1" class="Tamanio_planetas planeta1"></td>
-      </tr>
-      <tr>
-        <td><input type="number" id="n_planeta2" class="numeracion_planetas planeta2"></td>
-        <td><input type="text" id="np_planeta2" class="nombre_planetas planeta2"></td>
-        <td><input type="number" id="d_planeta2" class="distancia_planetas planeta2"></td>
-        <td><input type="number" id="t_planeta2" class="Tamanio_planetas planeta2"></td>
-      </tr>
-      <td><input type="number" id="n_planeta3" class="numeracion_planetas planeta3"></td>
-      <td><input type="text" id="np_planeta3" class="nombre_planetas planeta3"></td>
-      <td><input type="number" id="d_planeta3" class="distancia_planetas planeta3"></td>
-      <td><input type="number" id="t_planeta3" class="Tamanio_planetas planeta3"></td>
-    </tr>
-    <tr>
-      <td><input type="number" id="n_planeta4" class="numeracion_planetas planeta4"></td>
-      <td><input type="text" id="np_planeta4" class="nombre_planetas planeta4"></td>
-      <td><input type="number" id="d_planeta4" class="distancia_planetas planeta4"></td>
-      <td><input type="number" id="t_planeta4" class="Tamanio_planetas planeta4"></td>
-    </tr>
-  </tbody>
-  </table>
-  <div class="container">
-    <button id="btn_enviar_evaluacion" class="item">Enviar</button>
-    <button id="btn_ordenar_valores" class="item">Ordenar Valores</button>
-    <button id="btn_filtrar_distancia" class="item">Filtrar</button>
-    <button id="btn_buscar_planeta" class="item">Buscar</button>
+  <!-- Planets table -->
+  <div class="mx-5 text-center vh-100 row justify-content-center align-items-center">
+    <table class="w-50 table table-success table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col" class="  opacity-25">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Distancia</th>
+          <th scope="col">Tamaño</th>
+        </tr>
+      </thead>
+      <tbody id="idBodyTable" class="fs-6">
+        <!-- The "tr" tags are inserted fron JS script -->
+      </tbody>
+    </table>
   </div>
-
   <!-- Page Footer -->
-  <footer class="mt-3 text-center text-lg-start bg-light text-muted">
+  <footer class="mt-3 text-center text-lg-start bg-transparen text-muted fixed-bottom">
     <!-- Copyright -->
-    <div class="text-center p-4 bg-ligth">
+    <div class="text-center p-1 bg-ligth">
       <img class="" src="./images/own_logo/Logo s3.svg" alt="" width="35" height="35">
       </a>
       <a class="text-reset fw-bold me-3 text-decoration-none" href="">HSystem </a>
@@ -83,7 +70,7 @@
   <!--║ LINKS to own and external SCRIPTS                            ║-->
   <!--╚══════════════════════════════════════════════════════════════╝-->
   <!-- Links OWN JS script files to this html -->
-  <script src="./scripts/script.js" type="module"></script> <!-- JS principal -->
+  <script src="./scripts/app.js" type="module"></script> <!-- JS principal -->
   <!-- "Bootstrap and Bootstrap.bundle that contains "popper" -->
   <script src="./library/bootstrap/js/bootstrap.min.js"></script>
   <script src="./library/bootstrap/js/bootstrap.bundle.min.js"></script>

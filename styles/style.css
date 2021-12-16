@@ -2,7 +2,7 @@
   ║ MAIN STYLES CSS sheet                          ║
   ╚════════════════════════════════════════════════╝*/
 /* Font import and root and body css */
-
+@import url('https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&family=Press+Start+2P&display=swap');
 /* Variables definition */
 * {
    --colorBgNavBarr: #f9da68;
@@ -18,5 +18,15 @@
    /* border: none; */
 }
 body{ 
-   font-family: sans-serif; 
+   font-family: 'Coustard', serif;
+   background-image: url(../images/planets_iau_big.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.clFontTitles1 {
+   font-family: 'Press Start 2P', cursive;
+}
+table {
+   opacity: 0.75;
 }
