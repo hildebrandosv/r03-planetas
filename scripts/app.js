@@ -17,19 +17,22 @@ let tbPlanetTmp = [];    // To storage the planets in other order
 // *********************************************
 //
 const elPlanetsBodyTable = document.getElementById('idBodyTable');
-fnFillTable(elPlanetsBodyTable, tbPlanets, "DEFAULT");
+fnFillTable(elPlanetsBodyTable, tbPlanets, "DEFAULT", true);
 // Listeners the event click in the three choices of tre order dropdown
 const elIdByName = document.getElementById('idByName').addEventListener('click',
    e => {
-      fnFillTable(elPlanetsBodyTable, tbPlanets, "NAME");
+      const lInAscendingOrder= document.getElementById('idOrderAsc').checked;
+      fnFillTable(elPlanetsBodyTable, tbPlanets, "NAME", lInAscendingOrder);
    })
 const elIdByDistance = document.getElementById('idByDistance').addEventListener('click',
    e => {
-      fnFillTable(elPlanetsBodyTable, tbPlanets, "DISTANCE");
+      const lInAscendingOrder= document.getElementById('idOrderAsc').checked;
+      fnFillTable(elPlanetsBodyTable, tbPlanets, "DISTANCE", lInAscendingOrder);
    })
 const elIdBySize = document.getElementById('idBySize').addEventListener('click',
    e => {
-      fnFillTable(elPlanetsBodyTable, tbPlanets, "SIZE");
+      const lInAscendingOrder= document.getElementById('idOrderAsc').checked;
+      fnFillTable(elPlanetsBodyTable, tbPlanets, "SIZE", lInAscendingOrder);
    })
 console.log(Number("1.23"))
 
@@ -42,20 +45,25 @@ function cl(aa) { console.log("Aquí voy... ", aa); }
 //╔════════════════════════════════════════════════╗
 //║             FUNCTION DEFINITION                ║
 //╚════════════════════════════════════════════════╝
-function fnFillTable(elementBodyId, aTheArray, sTheOrder)
+function fnFillTable(elementBodyId, aTheArray, sTheOrder, lAscendingOrder)
 // Displays the info in the table, according to an order
 {
-   console.log(aTheArray)
-   console.log(sTheOrder)
+   let nOrderMajor= 1;
+   let nOrderMinor= -1;
+// Defines the order const to sort method in 1 and -1 when "lAscendingOrder" is true; and in -1 and 1 when is false.
+   if (!lAscendingOrder) {
+      nOrderMajor= -1;
+      nOrderMinor= 1;
+      }
    // First orders the array according to user chooses and according to "sTheOrder" parameter
    switch (sTheOrder.toUpperCase()) {
       case 'NAME':
          aTheArray.sort((a, b) => {
             if (a.name > b.name) {
-               return 1;
+               return nOrderMajor;
             }
             if (a.name < b.name) {
-               return -1;
+               return nOrderMinor;
             }
             // a must be equal to b
             return 0;
@@ -64,10 +72,10 @@ function fnFillTable(elementBodyId, aTheArray, sTheOrder)
       case 'SIZE':
          aTheArray.sort((a, b) => {
             if (Number(a.size) > Number(b.size)) {
-               return 1;
+               return nOrderMajor;
             }
             if (Number(a.size) < Number(b.size)) {
-               return -1;
+               return nOrderMinor;
             }
             // a must be equal to b
             return 0;
@@ -76,10 +84,10 @@ function fnFillTable(elementBodyId, aTheArray, sTheOrder)
       default:
          aTheArray.sort((a, b) => {
             if (Number(a.distance) > Number(b.distance)) {
-               return 1;
+               return nOrderMajor;
             }
             if (Number(a.distance) < Number(b.distance)) {
-               return -1;
+               return nOrderMinor;
             }
             // a must be equal to b
             return 0;
