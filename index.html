@@ -58,6 +58,9 @@
               </div>
             </ul>
           </li>
+          <li class="nav-item">
+            <a id="idSend" class="nav-link" href="#">Enviar</a>
+          </li>
         </ul>
         <!-- Form to search info -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -100,6 +103,24 @@
         <!-- The "tr" tags are inserted fron JS script -->
       </tbody>
     </table>
+  </div>
+  <!-- Modal to sended information -->
+  <div id="idModalSend" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title clFontTitles1">Información Enviada</h5>
+          <button id="idModalSendBtnClose" type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="w-100 img-fluid" src="./images/chalenger01.png">
+          <p class="text-center my-2 fs-5">Los datos se enviaron de manera exitosa.</p>
+
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- Page Footer -->
   <footer class="mt-3 text-center text-lg-start bg-transparen text-muted fixed-bottom">

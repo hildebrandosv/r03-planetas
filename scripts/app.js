@@ -71,8 +71,22 @@ elIdSearchForm.addEventListener('submit', e => {
 elIdClearButton.addEventListener('click', e => {
    e.preventDefault();
    elIdSearchForm.reset();
+   elIdClearButton.classList.add('d-none');
    // Shows the default data
    fnFillTable(elPlanetsBodyTable, tbPlanets, "DEFAULT", true);
+})
+// Sends the data somewhere
+const elIdModalSend= document.getElementById('idModalSend')
+const elIdSend= document.getElementById('idSend').addEventListener('click', e => {
+   e.preventDefault();
+   elIdModalSend.style.display = "block";
+   elIdModalSend.style.paddingRight = "17px";
+   elIdModalSend.className="modal fade show"; 
+})
+const elIdModalSendBtnClose = document.getElementById('idModalSendBtnClose').addEventListener('click', e => {
+   e.preventDefault();
+   elIdModalSend.style.display = "none";
+   elIdModalSend.className="modal fade";
 })
 //
 // *********************************************
