@@ -21,17 +21,17 @@ fnFillTable(elPlanetsBodyTable, tbPlanets, "DEFAULT", true);
 // Listeners the event click in the three choices of tre order dropdown
 const elIdByName = document.getElementById('idByName').addEventListener('click',
    e => {
-      const lInAscendingOrder= document.getElementById('idOrderAsc').checked;
+      const lInAscendingOrder = document.getElementById('idOrderAsc').checked;
       fnFillTable(elPlanetsBodyTable, tbPlanets, "NAME", lInAscendingOrder);
    })
 const elIdByDistance = document.getElementById('idByDistance').addEventListener('click',
    e => {
-      const lInAscendingOrder= document.getElementById('idOrderAsc').checked;
+      const lInAscendingOrder = document.getElementById('idOrderAsc').checked;
       fnFillTable(elPlanetsBodyTable, tbPlanets, "DISTANCE", lInAscendingOrder);
    })
 const elIdBySize = document.getElementById('idBySize').addEventListener('click',
    e => {
-      const lInAscendingOrder= document.getElementById('idOrderAsc').checked;
+      const lInAscendingOrder = document.getElementById('idOrderAsc').checked;
       fnFillTable(elPlanetsBodyTable, tbPlanets, "SIZE", lInAscendingOrder);
    })
 console.log(Number("1.23"))
@@ -48,13 +48,13 @@ function cl(aa) { console.log("Aquí voy... ", aa); }
 function fnFillTable(elementBodyId, aTheArray, sTheOrder, lAscendingOrder)
 // Displays the info in the table, according to an order
 {
-   let nOrderMajor= 1;
-   let nOrderMinor= -1;
-// Defines the order const to sort method in 1 and -1 when "lAscendingOrder" is true; and in -1 and 1 when is false.
-   if (!lAscendingOrder) {
-      nOrderMajor= -1;
-      nOrderMinor= 1;
-      }
+   // Defines the order const to sort method in 1 and -1 when "lAscendingOrder" is true; and in -1 and 1 when is false.
+   let nOrderMajor = 1;     // Default value to ascending order to order methos in an objects array
+   let nOrderMinor = -1;    // Default value to ascending order to order methos in an objects array 
+   if (!lAscendingOrder) { // If the order is descending, reverses the default values
+      nOrderMajor = -1;
+      nOrderMinor = 1;
+   }
    // First orders the array according to user chooses and according to "sTheOrder" parameter
    switch (sTheOrder.toUpperCase()) {
       case 'NAME':
@@ -68,6 +68,19 @@ function fnFillTable(elementBodyId, aTheArray, sTheOrder, lAscendingOrder)
             // a must be equal to b
             return 0;
          });
+         // Shows or hides the type ordering icons depending of by which data is ordering
+         if (lAscendingOrder) {
+            document.getElementById('idAscIconName').classList.remove('d-none')
+            document.getElementById('idDesIconName').classList.add('d-none')
+         }
+         else {
+            document.getElementById('idDesIconName').classList.remove('d-none')
+            document.getElementById('idAscIconName').classList.add('d-none')
+         }
+         document.getElementById('idAscIconSize').classList.add('d-none')
+         document.getElementById('idDesIconSize').classList.add('d-none')
+         document.getElementById('idAscIconDistance').classList.add('d-none')
+         document.getElementById('idDesIconDistance').classList.add('d-none')
          break;
       case 'SIZE':
          aTheArray.sort((a, b) => {
@@ -80,6 +93,19 @@ function fnFillTable(elementBodyId, aTheArray, sTheOrder, lAscendingOrder)
             // a must be equal to b
             return 0;
          });
+         // Shows or hides the type ordering icons depending of by which data is ordering
+         if (lAscendingOrder) {
+            document.getElementById('idAscIconSize').classList.remove('d-none')
+            document.getElementById('idDesIconSize').classList.add('d-none')
+         }
+         else {
+            document.getElementById('idDesIconSize').classList.remove('d-none')
+            document.getElementById('idAscIconSize').classList.add('d-none')
+         }
+         document.getElementById('idAscIconName').classList.add('d-none')
+         document.getElementById('idDesIconName').classList.add('d-none')
+         document.getElementById('idAscIconDistance').classList.add('d-none')
+         document.getElementById('idDesIconDistance').classList.add('d-none')
          break;
       default:
          aTheArray.sort((a, b) => {
@@ -92,6 +118,19 @@ function fnFillTable(elementBodyId, aTheArray, sTheOrder, lAscendingOrder)
             // a must be equal to b
             return 0;
          });
+         // Shows or hides the type ordering icons depending of by which data is ordering
+         if (lAscendingOrder) {
+            document.getElementById('idAscIconDistance').classList.remove('d-none')
+            document.getElementById('idDesIconDistance').classList.add('d-none')
+         }
+         else {
+            document.getElementById('idDesIconDistance').classList.remove('d-none')
+            document.getElementById('idAscIconDistance').classList.add('d-none')
+         }
+         document.getElementById('idAscIconName').classList.add('d-none')
+         document.getElementById('idDesIconName').classList.add('d-none')
+         document.getElementById('idAscIconSize').classList.add('d-none')
+         document.getElementById('idDesIconSize').classList.add('d-none')
          break;
    }
    // To fill the table and show it ordered
