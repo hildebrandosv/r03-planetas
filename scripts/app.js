@@ -8,6 +8,9 @@ import { tbData01 } from "../data/data.js";
 //
 // *** CONSTANT definition ***
 const tbPlanets = tbData01;
+const elIdSearchForm = document.getElementById('idSearchForm');
+const elIdSearchInput = document.getElementById('idSearchInput');
+const elIdClearButton = document.getElementById('idClearButton');
 //
 // *** VARIABLES definition ***
 let tbPlanetTmp = [];    // To storage the planets in other order
@@ -35,25 +38,41 @@ const elIdBySize = document.getElementById('idBySize').addEventListener('click',
       fnFillTable(elPlanetsBodyTable, tbPlanets, "SIZE", lInAscendingOrder);
    })
 // Listeners the commit event
-const elIdSearchInput = document.getElementById('idSearchInput')
 const elIdSearchButton = document.getElementById('idSearchButton')
 elIdSearchInput.addEventListener('input', e => {
    if (elIdSearchInput.value.length > 0) {
-      elIdSearchButton.disabled= false;
+      elIdSearchButton.disabled = false;
       elIdSearchButton.classList.remove('btn-outline-secondary');
       elIdSearchButton.classList.add('btn-outline-success');
+      // Shows form clear button
+      elIdClearButton.classList.remove('d-none');
    }
    else {
-      elIdSearchButton.disabled= true;
+      elIdSearchButton.disabled = true;
       elIdSearchButton.classList.add('btn-outline-secondary');
       elIdSearchButton.classList.remove('btn-outline-success');
+      // Hides form clear button
+      elIdClearButton.classList.add('d-none');
    }
 })
-const elIdSearchForm = document.getElementById('idSearchForm').addEventListener('submit', e => {
+// Listeners all form to search
+elIdSearchForm.addEventListener('submit', e => {
+      e.preventDefault();
+   // Searchs in the names, distances and sizes
+   const anyValueToSearch = elIdSearchInput.value.toUpperCase();
+   const aWithTheSearch = tbPlanets.filter(element => {
+      return (element.name.toUpperCase() == anyValueToSearch ||
+         Number(element.distance) == Number(anyValueToSearch) ||
+         Number(element.size) == Number(anyValueToSearch))
+   })
+   fnFillTable(elPlanetsBodyTable, aWithTheSearch, "DEFAULT", true);
+})
+// Listeners Clear form button
+elIdClearButton.addEventListener('click', e => {
    e.preventDefault();
-   // Searchs in the names
-
-   console.log("hola...")
+   elIdSearchForm.reset();
+   // Shows the default data
+   fnFillTable(elPlanetsBodyTable, tbPlanets, "DEFAULT", true);
 })
 //
 // *********************************************
