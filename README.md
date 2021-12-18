@@ -12,6 +12,9 @@ ___
 #### * Desarrollo de la página web según PDF "Planetas.pdf" en la carpeta "design"
 
 ## --> PANTALLAS DE EVIDENCIA:
+### - Envío:
+![image](https://user-images.githubusercontent.com/73366557/146653020-f01601ce-d057-4dc5-9dfe-d76b10de44bf.png)
+
 ### - Código fuente:
 
 ### - Resultado:
