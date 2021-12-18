@@ -16,9 +16,11 @@ ___
 ![image](https://user-images.githubusercontent.com/73366557/146653020-f01601ce-d057-4dc5-9dfe-d76b10de44bf.png)
 
 ### - Código fuente:
+![image](https://user-images.githubusercontent.com/73366557/146653046-c9d9acac-12cc-4efd-9431-3d6c07a21cc5.png)
 
 ### - Resultado:
+![image](https://user-images.githubusercontent.com/73366557/146653068-c834737d-c9d8-4edd-8766-66e498ad11d6.png)
 
 ___
-### Hildebrando Sierra V.
+> ### Hildebrando Sierra V.
 
