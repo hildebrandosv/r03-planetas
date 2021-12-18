@@ -1,9 +1,9 @@
 # Front End 7 | Academia Geek
 ## Reto: Planetas | Ejercicios de clase Planetas | Presentación | Sesión sincrónica - 13 de diciembre | Sprint #1
 
-### Formador : John Florez | @JohnFlorez25
-### [Repositorio] https://github.com/hildebrandosv/r03-planetas 
-> #### [WebPage] https://hildebrandosv.github.io/r03-planetas/ 
+> ## Formador : John Florez | @JohnFlorez25
+> ## [WebPage] https://hildebrandosv.github.io/r03-planetas/
+#### [Repositorio] https://github.com/hildebrandosv/r03-planetas
 ___
 ### --> ENUNCIADO:
 #### * Taller de GIT según el siguiente enlace:
